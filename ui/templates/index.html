@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Upload</title>
+    <style type="text/css">  
+        body {
+        background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <h1>Converting the Image to Grey Scale</h1>
+    <h3>Upload an Image</h3>
+    <br>
+    <form action="http://127.0.0.1:8081/process_image" method="POST" enctype="multipart/form-data">
+        <input type="file" name="image">
+        <br><br>
+        <input type="submit" value="Process">
+    </form>
+    <br>
+    
+    <h3>Input Image</h3> 
+    <br>
+    {% if input_image %}
+        <img src="data:image/jpeg;base64,{{ input_image }}" alt="Received Image">
+    {% else %}
+        <p>No input image available.</p>
+    {% endif %}
+    <br>
+    
+    <h3>Processed Image</h3> 
+    <br>
+    {% if processed_image_url %}
+        <img src="{{ processed_image_url }}" alt="Processed Image">
+    {% else %}
+        <p>No processed image available.</p>
+    {% endif %}
+    </div>
+</body>
+</html>

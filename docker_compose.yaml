@@ -1,0 +1,21 @@
+version: "1"
+services:
+ ui:
+  build:
+   context: ui/
+   dockerfile: Dockerfile
+  image: ui
+  ports:
+   - 8080:8080 
+ main:
+  build:
+   context: app/
+   dockerfile: Dockerfile
+  image: process_img
+  ports:
+   - 8081:8081
+  volumes: 
+   - store_data:/home/app
+
+volumes:
+  store_data:
