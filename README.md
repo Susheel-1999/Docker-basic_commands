@@ -60,3 +60,9 @@ docker compose -f docker_compose.yaml up -d
 
 <i><b>To stop and remove docker compose file</b></i>: <br>
 docker compose -f docker_compose.yaml down
+
+<i><b>To remove all images without at least one container associated to them</b></i>: <br>
+docker image prune -a
+
+<i><b>To remove all stopped containers</b></i>: <br>
+docker container prune
