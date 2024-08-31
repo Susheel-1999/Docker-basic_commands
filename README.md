@@ -49,8 +49,15 @@ docker stop [docker container id/ docker image name]
 <i><b>To see the logs of the Docker image</b></i>: <br>
 docker logs [docker container id/ docker image name]
 
-<i><b>To delete a Docker image from the container</b></i>: <br>
-docker remove [docker container id/ docker image name]
+<i><b>To delete container</b></i>: <br>
+docker remove [docker container id/ docker image name]  <br>
+docker rm [docker container id/ docker image name]
+
+<i><b>To remove image</b></i>: <br>
+docker image rm [image_id / image_name]:[tag] <br>
+docker rmi [name/image_id]:[tag] <br>
+docker rmi [name/image_id]:[tag] -f<br>
+
 
 <i><b>To see the progress status of all Docker images</b></i>: <br>
 docker ps -a
@@ -66,3 +73,6 @@ docker image prune -a
 
 <i><b>To remove all stopped containers</b></i>: <br>
 docker container prune
+
+<i><b>To remove all unused containers, networks, images (both dangling and unused), and optionally, volumes.</b></i>: <br>
+docker system prune
